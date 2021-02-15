@@ -4,6 +4,7 @@ import Dropzone from 'react-dropzone';
 import Axios from 'axios';
 import { useSelector } from 'react-redux';
 
+
 const { TextArea } = Input;
 const { Title } = Typography;
 
@@ -18,9 +19,6 @@ const CategoryOptions = [
     { value: 2, label: "Music" },
     { value: 3, label: "Pets & Animals" },
 ]
-
-
-
 
 
 
@@ -76,7 +74,7 @@ function VideoUploadPage(props) {
                 Axios.post('/api/video/thumbnail', variable).then(res => {
                     if (res.data.success) {
 
-                        setDuration(res.data.fileDration);
+                        setDuration(res.data.fileDuration);
                         setThumbnailPath(res.data.url);
                         setLoadingIcon(false);
                     } else {
